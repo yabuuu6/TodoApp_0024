@@ -161,4 +161,19 @@ void _showDateTimePicker(BuildContext context) {
            "${dateTime.minute.toString().padLeft(2, '0')}";
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Form Page"),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        titleTextStyle: const TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+      ),
+  }
 }
