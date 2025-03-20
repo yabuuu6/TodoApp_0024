@@ -302,7 +302,16 @@ void _showDateTimePicker(BuildContext context) {
                           ),
                         ],
                       ),
-                }
+                      // Checkbox di sebelah kanan
+                      trailing: Checkbox(
+                        value: _tasks[index].isDone,
+                        onChanged: (value) => _toggleTaskStatus(index),
+                        activeColor: Colors.purple,
+                      ),
+                    ),
+                  );
+                },
+              )
             ),
           ],
         ),
