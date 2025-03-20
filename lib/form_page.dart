@@ -238,6 +238,26 @@ void _showDateTimePicker(BuildContext context) {
                       
                       const SizedBox(width: 10), // Jarak antara input dan tombol
 
+                      // Tombol Submit
+                      SizedBox(
+                        height: 50, // Menyamakan tinggi tombol dengan input
+                        child: ElevatedButton(
+                          onPressed: _addTask,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.purple, // Warna tombol
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                            padding: const EdgeInsets.symmetric(horizontal: 20), // Padding horizontal
+                          ),
+                          child: const Text(
+                            "Submit",
+                            style: TextStyle(
+                              color: Colors.white, // Warna teks putih
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          
+              )
+            ),
           ],
         ),
       ),
