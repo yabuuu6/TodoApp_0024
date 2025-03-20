@@ -188,10 +188,26 @@ void _showDateTimePicker(BuildContext context) {
                 children: [
                   const Text("Task Date:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 5),
-              )
-            )
-          ]
-        )
-      )
+
+                  // Pilih Tanggal & Waktu
+                  Row(
+                    children: [
+                      Text(
+                        _selectedDateTime == null
+                            ? "Select a date"
+                            : formatDateTime(_selectedDateTime!),
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        icon: const Icon(Icons.calendar_today, color: Color.fromARGB(255, 0, 0, 0), size: 30),
+                        onPressed: () => _showDateTimePicker(context),
+                      ),
+                    ],
+                  ),
+
+        ),
+      ),
+    );
   }
 }
