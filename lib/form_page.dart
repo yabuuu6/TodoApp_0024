@@ -98,4 +98,28 @@ void _showDateTimePicker(BuildContext context) {
     },
   );
 }
+    void _addTask() {
+    if (_formKey.currentState!.validate()) {
+      if (_selectedDateTime == null) {
+        // Jika user belum memilih tanggal, munculkan pesan error
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text(
+              "Please select a date first!",
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating, 
+            margin: const EdgeInsets.all(16), 
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8), 
+            ),
+            duration: const Duration(seconds: 2), 
+          ),
+        );
+        return; // Stop eksekusi biar tidak lanjut ke bawah
+      }
+
+    }
+    }
 }
