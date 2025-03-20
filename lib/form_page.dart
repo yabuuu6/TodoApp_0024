@@ -56,6 +56,19 @@ void _showDateTimePicker(BuildContext context) {
 
             const SizedBox(height: 10),
 
+            // Date & Time Picker
+            Expanded(
+              child: CupertinoDatePicker(
+                initialDateTime: _selectedDateTime ?? DateTime.now(),
+                mode: CupertinoDatePickerMode.dateAndTime,
+                use24hFormat: false, 
+                onDateTimeChanged: (DateTime newDate) {
+                  tempPickedDate = newDate;
+                },
+              ),
+            ),
+
+            const SizedBox(height: 10),
+        )
     }
-  }
 }
