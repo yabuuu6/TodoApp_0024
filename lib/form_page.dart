@@ -206,6 +206,19 @@ void _showDateTimePicker(BuildContext context) {
                     ],
                   ),
 
+                  if (_selectedDateTime == null)
+                    const Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Please select a date",
+                        style: TextStyle(color: Colors.red, fontSize: 14),
+                      ),
+                    ),
+
+                  const SizedBox(height: 10),
+
+                 
+          ],
         ),
       ),
     );
