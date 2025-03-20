@@ -120,6 +120,29 @@ void _showDateTimePicker(BuildContext context) {
         return; // Stop eksekusi biar tidak lanjut ke bawah
       }
 
+      setState(() {
+        _tasks.add(Task(title: _taskController.text, deadline: _selectedDateTime!));
+        _taskController.clear();
+        _selectedDateTime = null;
+      });
+
+      // Menampilkan Snackbar sukses 
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text(
+            "Task added successfully",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.teal, 
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
     }
-    }
+  }
+
 }
