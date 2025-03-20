@@ -175,5 +175,23 @@ void _showDateTimePicker(BuildContext context) {
           color: Colors.black,
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Form Input
+            Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text("Task Date:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 5),
+              )
+            )
+          ]
+        )
+      )
   }
 }
