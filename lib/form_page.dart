@@ -284,8 +284,15 @@ void _showDateTimePicker(BuildContext context) {
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
 
-              )
-            ),
+                      // Deadline + Done/Not Done di bawahnya
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Deadline: ${formatDateTime(_tasks[index].deadline)}",
+                            style: const TextStyle(fontSize: 12, color: Colors.blueGrey),
+                          ),
+                }
           ],
         ),
       ),
