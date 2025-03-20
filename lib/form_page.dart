@@ -145,4 +145,11 @@ void _showDateTimePicker(BuildContext context) {
     }
   }
 
+  // Fungsi untuk mengganti status tugas
+  void _toggleTaskStatus(int index) {
+    setState(() {
+      _tasks[index].isDone = !_tasks[index].isDone;
+    });
+  }
+
 }
