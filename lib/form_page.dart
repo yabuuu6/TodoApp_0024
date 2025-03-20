@@ -284,7 +284,7 @@ void _showDateTimePicker(BuildContext context) {
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
 
-                      // Deadline + Done/Not Done di bawahnya
+                      // Deadline 
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -292,7 +292,18 @@ void _showDateTimePicker(BuildContext context) {
                             "Deadline: ${formatDateTime(_tasks[index].deadline)}",
                             style: const TextStyle(fontSize: 12, color: Colors.blueGrey),
                           ),
+                          const SizedBox(height: 5),
+                          Text(
+                            _tasks[index].isDone ? "Done" : "Not Done",
+                            style: TextStyle(
+                              color: _tasks[index].isDone ? Colors.green : Colors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                 }
+            ),
           ],
         ),
       ),
