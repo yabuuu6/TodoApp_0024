@@ -217,7 +217,27 @@ void _showDateTimePicker(BuildContext context) {
 
                   const SizedBox(height: 10),
 
-                 
+                  Row(
+                    children: [
+                      // Input Nama Tugas 
+                      Expanded(
+                        child: TextFormField(
+                          controller: _taskController,
+                          decoration: InputDecoration(
+                            labelText: "Nama Tugas",
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter some text";
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
+                      
+                      const SizedBox(width: 10), // Jarak antara input dan tombol
+
           ],
         ),
       ),
