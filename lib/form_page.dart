@@ -268,7 +268,25 @@ void _showDateTimePicker(BuildContext context) {
             // List Tugas
             const Text("List Tasks", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
 
-            
+            Expanded(
+              child: _tasks.isEmpty
+                  ? const Center(child: Text("No tasks yet!"))
+                  : ListView.builder(
+                itemCount: _tasks.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    color: Colors.grey[200],
+                    margin: const EdgeInsets.symmetric(vertical: 5),
+                    child: ListTile(
+                      // Nama tugas
+                      title: Text(
+                        _tasks[index].title,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+
+              )
+            ),
+          ],
         ),
       ),
     );
