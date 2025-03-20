@@ -32,5 +32,30 @@ void _showDateTimePicker(BuildContext context) {
     builder: (BuildContext builder) {
       DateTime tempPickedDate = _selectedDateTime ?? DateTime.now();
 
+      return Container(
+        height: 350,
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Set Task Date & Time",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.close, color: Color.fromARGB(255, 0, 0, 0), size: 24),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 10),
+
     }
+  }
 }
